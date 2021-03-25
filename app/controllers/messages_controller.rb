@@ -23,7 +23,13 @@ class MessagesController < ApplicationController
     def update
       message = Message.find(params[:id])
       message.update(message_params)
-      redirect_to action: :index
+      # redirect_to action: :index
+    end
+    
+    def destroy
+      message = Message.find(params[:id])
+      message.destroy
+      # redirect_to action: :index
     end
     
     
